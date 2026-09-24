@@ -1,0 +1,31 @@
+<script>
+  let jackpot = Math.floor(Math.random() * 100) + 1;
+  console.log(jackpot);
+
+  let attempts = 0;
+
+  for (; attempts < 10; attempts++) {
+    const input = prompt("Enter a number");
+
+    if (input === null) {
+      break;
+    }
+
+    const guess = Number(input);
+
+    if (Number.isNaN(guess)) {
+      alert("Please enter a valid number");
+    } else if (guess > jackpot) {
+      alert(`Jackpot is less than ${guess}`);
+    } else if (guess < jackpot) {
+      alert(`Jackpot is greater than ${guess}`);
+    } else {
+      alert("Jackpot!");
+      break;
+    }
+  }
+
+  if (attempts === 10) {
+    alert("You used all 10 attempts");
+  }
+</script>
